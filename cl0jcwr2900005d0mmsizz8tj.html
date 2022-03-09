@@ -19,10 +19,10 @@
     <link rel="dns-prefetch" href="https://280564871.github.io">
     <!--SEO-->
 
-<meta name="keywords" content="blog">
+<meta name="keywords" content="Linux,Windows64,Mac,Go">
 
 
-<meta name="description" content="blog">
+<meta name="description" content="Mac 下编译 Linux 和 Windows 64位可执行程序12CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.goCGO_ENABL...">
 
 
 <meta name="robots" content="all">
@@ -33,7 +33,7 @@
 
 <title>
     
-    标签: Linux |
+    Go交叉编译 |
     
     blog-xmy
 </title>
@@ -138,149 +138,112 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        Linux
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="Go交叉编译">
+            
+            Go交叉编译
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/cl0jcwr2900005d0mmsizz8tj.html">
-                    Go交叉编译</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年10月10日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/tools/">tools</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
             
-            Mac 下编译 Linux 和 Windows 64位可执行程序12CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.goCGO_ENABLED=0 GOOS=windows GO...
+            <a class="tag-link" href="/tags/Go/">Go</a> <a class="tag-link" href="/tags/Linux/">Linux</a> <a class="tag-link" href="/tags/Mac/">Mac</a> <a class="tag-link" href="/tags/Windows64/">Windows64</a>
             
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/10/10</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                881</strong>
+            天之前发表，文中内容可能已经过时。
         </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Mac-下编译-Linux-和-Windows-64位可执行程序"><a href="#Mac-下编译-Linux-和-Windows-64位可执行程序" class="headerlink" title="Mac 下编译 Linux 和 Windows 64位可执行程序"></a>Mac 下编译 Linux 和 Windows 64位可执行程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go</span><br><span class="line">CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go</span><br></pre></td></tr></table></figure>
+<h2 id="Linux-下编译-Mac-和-Windows-64位可执行程序"><a href="#Linux-下编译-Mac-和-Windows-64位可执行程序" class="headerlink" title="Linux 下编译 Mac 和 Windows 64位可执行程序"></a>Linux 下编译 Mac 和 Windows 64位可执行程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go</span><br><span class="line">CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go</span><br></pre></td></tr></table></figure>
+<h2 id="Windows-下编译-Mac-和-Linux-64位可执行程序"><a href="#Windows-下编译-Mac-和-Linux-64位可执行程序" class="headerlink" title="Windows 下编译 Mac 和 Linux 64位可执行程序"></a>Windows 下编译 Mac 和 Linux 64位可执行程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SET CGO_ENABLED=0</span><br><span class="line">SET GOOS=darwin</span><br><span class="line">SET GOARCH=amd64</span><br><span class="line">go build main.go</span><br><span class="line"></span><br><span class="line">SET CGO_ENABLED=0</span><br><span class="line">SET GOOS=linux</span><br><span class="line">SET GOARCH=amd64</span><br><span class="line">go build main.go</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/cl0jcwr2i00065d0mtqmcg7e4.html" class="pre-post btn btn-default" title='关于微信开发定位问题'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            关于微信开发定位问题</span>
+    </a>
+    
+    
+    <a href="/cl0jcwr2d00025d0m92xj0dh5.html" class="next-post btn btn-default" title='MAMP安装redis扩展'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            MAMP安装redis扩展</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
 
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/xmy1024" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:xmy.1@qq.com" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mac-下编译-Linux-和-Windows-64位可执行程序"><span class="toc-text">Mac 下编译 Linux 和 Windows 64位可执行程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-下编译-Mac-和-Windows-64位可执行程序"><span class="toc-text">Linux 下编译 Mac 和 Windows 64位可执行程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows-下编译-Mac-和-Linux-64位可执行程序"><span class="toc-text">Windows 下编译 Mac 和 Linux 64位可执行程序</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tools/"><i class="fa" aria-hidden="true">tools</i></a><span class="category-list-count">2</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/"><i class="fa" aria-hidden="true">2019年11月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/"><i class="fa" aria-hidden="true">2019年10月</i></a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Windows64/" style="font-size: 10px;">Windows64</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/地图/" style="font-size: 10px;">地图</a> <a href="/tags/微信/" style="font-size: 20px;">微信</a>
-        
-    </div>
-</div>
-
-    
-    
-    
 </aside>
-
                 
             </div>
         </div>
@@ -329,8 +292,6 @@
         </div>
     </div>
 </div>
-
-<script src="/js/search.js?rev=@@hash"></script>
 
 
 

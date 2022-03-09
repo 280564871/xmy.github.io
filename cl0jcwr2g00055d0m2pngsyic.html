@@ -19,10 +19,14 @@
     <link rel="dns-prefetch" href="https://280564871.github.io">
     <!--SEO-->
 
-<meta name="keywords" content="blog">
+<meta name="keywords" content="微信">
 
 
-<meta name="description" content="blog">
+<meta name="description" content="注意事项服务器进行接口调用的时候要设置好超时时间，防止微信接口返回超时导致请求失败，很多错误都是超时之后再次请求，所以返回信息会报错
+
+测试发货
+delivery_id =TEST
+biz_id...">
 
 
 <meta name="robots" content="all">
@@ -33,7 +37,7 @@
 
 <title>
     
-    标签: Linux |
+    微信物流助手测试 |
     
     blog-xmy
 </title>
@@ -138,149 +142,193 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        Linux
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="微信物流助手测试">
+            
+            微信物流助手测试
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/cl0jcwr2900005d0mmsizz8tj.html">
-                    Go交叉编译</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2019年10月10日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
             
-            Mac 下编译 Linux 和 Windows 64位可执行程序12CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.goCGO_ENABLED=0 GOOS=windows GO...
+            <a class="tag-link" href="/tags/微信/">微信</a>
             
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2019/11/18</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+        <p class="fa fa-exclamation-triangle warning">
+            本文于<strong>
+                842</strong>
+            天之前发表，文中内容可能已经过时。
         </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>服务器进行接口调用的时候要设置好<code>超时时间</code>，防止微信接口返回超时导致请求失败，很多错误都是超时之后再次请求，所以返回信息会报错</p>
+<hr>
+<h2 id="测试发货"><a href="#测试发货" class="headerlink" title="测试发货"></a>测试发货</h2><blockquote>
+<p>delivery_id =<code>TEST</code></p>
+<p>biz_id = <code>test_biz_id</code></p>
+</blockquote>
+<p>其他按照文档上的参数填写就可以测试发货</p>
+<hr>
+<h2 id="测试物流状态"><a href="#测试物流状态" class="headerlink" title="测试物流状态"></a>测试物流状态</h2><blockquote>
+<p>登录<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">小程序后台</a>后，在「开发」-「开发设置」-「消息推送」中，管理员扫码启用消息服务，填写服务器地址（URL）、令牌（Token） 和 消息加密密钥（EncodingAESKey）等信息。</p>
+</blockquote>
+<p>配置完毕后:</p>
+<p> 请求地址</p>
+<blockquote>
+<p><code>POST</code> <a href="https://api.weixin.qq.com/cgi-bin/express/business/test_update_order?access_token=ACCESS_TOKEN" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/express/business/test_update_order?access_token=ACCESS_TOKEN</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>access_token</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td><a href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html" target="_blank" rel="noopener">接口调用凭证</a></td>
+</tr>
+<tr>
+<td>biz_id</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>商户id,需填test_biz_id</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td>delivery_id</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>快递公司id,需填TEST</td>
+</tr>
+<tr>
+<td>waybill_id</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>运单号</td>
+</tr>
+<tr>
+<td>action_time</td>
+<td>number</td>
+<td></td>
+<td>是</td>
+<td>轨迹变化 Unix 时间戳</td>
+</tr>
+<tr>
+<td>action_type</td>
+<td>number</td>
+<td></td>
+<td>是</td>
+<td>轨迹变化类型</td>
+</tr>
+<tr>
+<td>action_msg</td>
+<td>string</td>
+<td></td>
+<td>是</td>
+<td>轨迹变化具体信息说明,使用UTF-8编码</td>
+</tr>
+</tbody>
+</table>
+<p>composer 引入 EasyWechat</p>
+<blockquote>
+<p>composer require overtrue/wechat:~4.0 -vvv</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$encryptor = <span class="keyword">new</span> Encryptor($cfg[<span class="string">'app_id'</span>], $cfg[<span class="string">'token'</span>], $cfg[<span class="string">'aes_key'</span>]);</span><br><span class="line"><span class="comment">//解密通知消息</span></span><br><span class="line"><span class="comment">//$msgSignature, $nonce, $timestamp 这三个参数是通过url传入</span></span><br><span class="line"><span class="keyword">return</span> $encryptor-&gt;decrypt($content, $msgSignature, $nonce, $timestamp);</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/cl0jcwr2i00065d0mtqmcg7e4.html" class="next-post btn btn-default" title='关于微信开发定位问题'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            关于微信开发定位问题</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
 
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/xmy1024" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:xmy.1@qq.com" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试发货"><span class="toc-text">测试发货</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试物流状态"><span class="toc-text">测试物流状态</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        分类
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/tools/"><i class="fa" aria-hidden="true">tools</i></a><span class="category-list-count">2</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/"><i class="fa" aria-hidden="true">2019年11月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/"><i class="fa" aria-hidden="true">2019年10月</i></a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Windows64/" style="font-size: 10px;">Windows64</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/地图/" style="font-size: 10px;">地图</a> <a href="/tags/微信/" style="font-size: 20px;">微信</a>
-        
-    </div>
-</div>
-
-    
-    
-    
 </aside>
-
                 
             </div>
         </div>
@@ -329,8 +377,6 @@
         </div>
     </div>
 </div>
-
-<script src="/js/search.js?rev=@@hash"></script>
 
 
 

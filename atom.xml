@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>blog-xmy</title>
+  
+  <subtitle>blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://280564871.github.io/"/>
+  <updated>2019-11-18T03:58:34.957Z</updated>
+  <id>https://280564871.github.io/</id>
+  
+  <author>
+    <name>xmy</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信物流助手测试</title>
+    <link href="https://280564871.github.io/cl0jcwr2g00055d0m2pngsyic.html"/>
+    <id>https://280564871.github.io/cl0jcwr2g00055d0m2pngsyic.html</id>
+    <published>2019-11-18T02:52:23.000Z</published>
+    <updated>2019-11-18T03:58:34.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>服务器进行接口调用的时候要设置好<code>超时时间</code>，防止微信接口返回超时导致请求失败，很多错误都是超时之后再次请求，所以返回信息会报错</p><hr><h2 id="测试发货"><a href="#测试发货" class="headerlink" title="测试发货"></a>测试发货</h2><blockquote><p>delivery_id =<code>TEST</code></p><p>biz_id = <code>test_biz_id</code></p></blockquote><p>其他按照文档上的参数填写就可以测试发货</p><hr><h2 id="测试物流状态"><a href="#测试物流状态" class="headerlink" title="测试物流状态"></a>测试物流状态</h2><blockquote><p>登录<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">小程序后台</a>后，在「开发」-「开发设置」-「消息推送」中，管理员扫码启用消息服务，填写服务器地址（URL）、令牌（Token） 和 消息加密密钥（EncodingAESKey）等信息。</p></blockquote><p>配置完毕后:</p><p> 请求地址</p><blockquote><p><code>POST</code> <a href="https://api.weixin.qq.com/cgi-bin/express/business/test_update_order?access_token=ACCESS_TOKEN" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/express/business/test_update_order?access_token=ACCESS_TOKEN</a></p></blockquote><table><thead><tr><th>属性</th><th>类型</th><th>默认值</th><th>必填</th><th>说明</th></tr></thead><tbody><tr><td>access_token</td><td>string</td><td></td><td>是</td><td><a href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html" target="_blank" rel="noopener">接口调用凭证</a></td></tr><tr><td>biz_id</td><td>string</td><td></td><td>是</td><td>商户id,需填test_biz_id</td></tr><tr><td>order_id</td><td>string</td><td></td><td>是</td><td>订单号</td></tr><tr><td>delivery_id</td><td>string</td><td></td><td>是</td><td>快递公司id,需填TEST</td></tr><tr><td>waybill_id</td><td>string</td><td></td><td>是</td><td>运单号</td></tr><tr><td>action_time</td><td>number</td><td></td><td>是</td><td>轨迹变化 Unix 时间戳</td></tr><tr><td>action_type</td><td>number</td><td></td><td>是</td><td>轨迹变化类型</td></tr><tr><td>action_msg</td><td>string</td><td></td><td>是</td><td>轨迹变化具体信息说明,使用UTF-8编码</td></tr></tbody></table><p>composer 引入 EasyWechat</p><blockquote><p>composer require overtrue/wechat:~4.0 -vvv</p></blockquote><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$encryptor = <span class="keyword">new</span> Encryptor($cfg[<span class="string">'app_id'</span>], $cfg[<span class="string">'token'</span>], $cfg[<span class="string">'aes_key'</span>]);</span><br><span class="line"><span class="comment">//解密通知消息</span></span><br><span class="line"><span class="comment">//$msgSignature, $nonce, $timestamp 这三个参数是通过url传入</span></span><br><span class="line"><span class="keyword">return</span> $encryptor-&gt;decrypt($content, $msgSignature, $nonce, $timestamp);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;注意事项&quot;&gt;&lt;a href=&quot;#注意事项&quot; class=&quot;headerlink&quot; title=&quot;注意事项&quot;&gt;&lt;/a&gt;注意事项&lt;/h2&gt;&lt;p&gt;服务器进行接口调用的时候要设置好&lt;code&gt;超时时间&lt;/code&gt;，防止微信接口返回超时导致请求失败，很多错误都是超时之后再
+      
+    
+    </summary>
+    
+    
+      <category term="微信" scheme="https://280564871.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于微信开发定位问题</title>
+    <link href="https://280564871.github.io/cl0jcwr2i00065d0mtqmcg7e4.html"/>
+    <id>https://280564871.github.io/cl0jcwr2i00065d0mtqmcg7e4.html</id>
+    <published>2019-11-07T14:58:41.000Z</published>
+    <updated>2019-11-18T05:00:32.347Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>腾讯地图的坑</p><p>在使用腾讯地图获取当前位置，在浏览器中是没问题的，但是在微信中却无法定位。</p></li></ul><p>当切到微信开发者工具的公众号调试中，发现腾讯地图会使用微信自带的定位接口，并且会调用wx.config，所以控制台会打印wx.config的信息。</p><p>更有意思的是他的签名还无效，所以会导致定位无法使用，所以我准备自己使用jssdk的定位接口来获取当前位置</p><ul><li>微信config的坑</li></ul><p>一开始在开发者工具上调用wx.config的时候没有问题，可以授权获取当前位置，但是当我用ios手机的时候，点击定位却无效，自己一步步打印调试发现没有问题，搜索了一下：</p><blockquote><p>Vue应用(vue-router)上使用history模式，在某个页面内调用微信JSSDK相关API，如扫码、分享等，使用当前页面URL总会出现签名错误(invalid signature)，导致API调用失败。</p></blockquote><p>Vue-Router进行路由切换的时候，总是会操作浏览器的历史记录，从而响应页面URL变化。</p><p>也就是说在ios上无论怎么更换页面始终都是第一次进入的url，但是我打印 <code>windows.local.herf</code>的时候就是当前页面的url  这点没太明白是为什么。</p><p>于是我尝试使用网上的解决方法，发现是可以解决这个问题的</p><p>分享部分代码 因为程序规模不大，所以也没有使用vuex</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function isIos() &#123;//判断是否为ios</span><br><span class="line">    const u = navigator.userAgent;</span><br><span class="line">    return u.indexOf(&quot;iPhone&quot;) &gt; -1 || u.indexOf(&quot;Mac OS&quot;) &gt; -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//路由拦截首次进入的url保存 这样在调用微信签名的时候就可以获取到首次进入的路径了</span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">    if (isIos &amp;&amp; sessionStorage.getItem(&quot;url&quot;) === null) &#123;</span><br><span class="line">        sessionStorage.setItem(&quot;url&quot;, window.location.href)</span><br><span class="line">    &#125;</span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>这两个坑调试了好久，记录一下！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;p&gt;腾讯地图的坑&lt;/p&gt;
+&lt;p&gt;在使用腾讯地图获取当前位置，在浏览器中是没问题的，但是在微信中却无法定位。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当切到微信开发者工具的公众号调试中，发现腾讯地图会使用微信自带的定位接口，并且会调用wx.config，所以控制台
+      
+    
+    </summary>
+    
+    
+      <category term="微信" scheme="https://280564871.github.io/tags/%E5%BE%AE%E4%BF%A1/"/>
+    
+      <category term="vue" scheme="https://280564871.github.io/tags/vue/"/>
+    
+      <category term="地图" scheme="https://280564871.github.io/tags/%E5%9C%B0%E5%9B%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Go交叉编译</title>
+    <link href="https://280564871.github.io/cl0jcwr2900005d0mmsizz8tj.html"/>
+    <id>https://280564871.github.io/cl0jcwr2900005d0mmsizz8tj.html</id>
+    <published>2019-10-10T03:59:49.000Z</published>
+    <updated>2019-10-10T13:40:25.646Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Mac-下编译-Linux-和-Windows-64位可执行程序"><a href="#Mac-下编译-Linux-和-Windows-64位可执行程序" class="headerlink" title="Mac 下编译 Linux 和 Windows 64位可执行程序"></a>Mac 下编译 Linux 和 Windows 64位可执行程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go</span><br><span class="line">CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go</span><br></pre></td></tr></table></figure><h2 id="Linux-下编译-Mac-和-Windows-64位可执行程序"><a href="#Linux-下编译-Mac-和-Windows-64位可执行程序" class="headerlink" title="Linux 下编译 Mac 和 Windows 64位可执行程序"></a>Linux 下编译 Mac 和 Windows 64位可执行程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go</span><br><span class="line">CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go</span><br></pre></td></tr></table></figure><h2 id="Windows-下编译-Mac-和-Linux-64位可执行程序"><a href="#Windows-下编译-Mac-和-Linux-64位可执行程序" class="headerlink" title="Windows 下编译 Mac 和 Linux 64位可执行程序"></a>Windows 下编译 Mac 和 Linux 64位可执行程序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SET CGO_ENABLED=0</span><br><span class="line">SET GOOS=darwin</span><br><span class="line">SET GOARCH=amd64</span><br><span class="line">go build main.go</span><br><span class="line"></span><br><span class="line">SET CGO_ENABLED=0</span><br><span class="line">SET GOOS=linux</span><br><span class="line">SET GOARCH=amd64</span><br><span class="line">go build main.go</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Mac-下编译-Linux-和-Windows-64位可执行程序&quot;&gt;&lt;a href=&quot;#Mac-下编译-Linux-和-Windows-64位可执行程序&quot; class=&quot;headerlink&quot; title=&quot;Mac 下编译 Linux 和 Windows 64位可
+      
+    
+    </summary>
+    
+      <category term="tools" scheme="https://280564871.github.io/categories/tools/"/>
+    
+    
+      <category term="Linux" scheme="https://280564871.github.io/tags/Linux/"/>
+    
+      <category term="Windows64" scheme="https://280564871.github.io/tags/Windows64/"/>
+    
+      <category term="Mac" scheme="https://280564871.github.io/tags/Mac/"/>
+    
+      <category term="Go" scheme="https://280564871.github.io/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MAMP安装redis扩展</title>
+    <link href="https://280564871.github.io/cl0jcwr2d00025d0m92xj0dh5.html"/>
+    <id>https://280564871.github.io/cl0jcwr2d00025d0m92xj0dh5.html</id>
+    <published>2019-10-09T02:30:35.000Z</published>
+    <updated>2019-10-10T05:02:12.068Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="使用pecl安装redis扩展"><a href="#使用pecl安装redis扩展" class="headerlink" title="使用pecl安装redis扩展"></a>使用pecl安装redis扩展</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#bin/bash</span><br><span class="line">cd /Applications/MAMP/bin/php/php7.1.31/bin</span><br><span class="line">./pecl install redis</span><br></pre></td></tr></table></figure><blockquote><p>找到php.ini文件加入 <code>extension=redis.so</code></p><p><code>phpinfo();</code>查看是否添加成功</p></blockquote><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;使用pecl安装redis扩展&quot;&gt;&lt;a href=&quot;#使用pecl安装redis扩展&quot; class=&quot;headerlink&quot; title=&quot;使用pecl安装redis扩展&quot;&gt;&lt;/a&gt;使用pecl安装redis扩展&lt;/h3&gt;&lt;figure class=&quot;highli
+      
+    
+    </summary>
+    
+      <category term="tools" scheme="https://280564871.github.io/categories/tools/"/>
+    
+    
+      <category term="Mac" scheme="https://280564871.github.io/tags/Mac/"/>
+    
+      <category term="Redis" scheme="https://280564871.github.io/tags/Redis/"/>
+    
+      <category term="PHP" scheme="https://280564871.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+</feed>
